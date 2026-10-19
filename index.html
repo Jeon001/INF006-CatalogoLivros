@@ -45,12 +45,10 @@
         </div>
     </div>
 
-    <!-- Script gerado pelo Emscripten -->
-    <script src="livros.js"></script>
     <script>
         let ordenarC, getTam, getTitulo, getPreco;
 
-        // O Emscripten chama esta função quando o arquivo .wasm estiver pronto
+        // Configurando o objeto Module ANTES de carregar o script gerado
         var Module = {
             onRuntimeInitialized: function() {
                 try {
@@ -99,5 +97,8 @@
             }
         }
     </script>
+
+    <!-- Script gerado pelo Emscripten carregado DEPOIS do Module -->
+    <script src="ordenacao.js"></script>
 </body>
 </html>
